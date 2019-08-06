@@ -5,13 +5,15 @@ class UserCard extends React.Component {
     super();
 
     this.state = {
+      userData: {},
       fetchProfile: () => {
         fetch('https://api.github.com/users/gisellehargrove')
           .then(response => {
             return response.json()
         })
           .then(response => {
-            console.log(response);
+            this.setState({userData: response})
+            console.log(this.state);
           })
       }
     };
