@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/gisellehargrove/React-Github-User-Card/issues"
   },
-  "homepage": "https://github.com/gisellehargrove/React-Github-User-Card#readme"
+  "homepage": "https://github.com/gisellehargrove/React-Github-User-Card#readme",
+  "dependencies": {
+    "node-sass": "^4.12.0"
+  }
 }

@@ -1,8 +1,17 @@
 import React from 'react';
+import './UserCard.scss';
+import Card from '@material-ui/core/Card';
+import CardHeader from '@material-ui/core/CardHeader';
+import CardMedia from '@material-ui/core/CardMedia';
+import CardActions from '@material-ui/core/CardActions';
+import Avatar from '@material-ui/core/Avatar';
+
 
 class UserCard extends React.Component {
+
   constructor() {
     super();
+
 
     this.state = {
       userData: {},
@@ -14,7 +23,7 @@ class UserCard extends React.Component {
           .then(response => {
             this.setState({userData: response})
             console.log(this.state);
-          })
+          });
       }
     };
   }
@@ -25,7 +34,18 @@ class UserCard extends React.Component {
 
   render() {
     return (
-      <div>UserCard Component</div>
+      <Card className="user">
+        <CardHeader
+          className="username"
+          avatar={
+            <Avatar className="avatar">G</Avatar>
+          }
+          title={this.state.userData.name}
+          subheader={'@' + this.state.userData.login}>
+        </CardHeader>
+
+        <CardMedia className="media" image={`${this.state.userData.avatar_url}`} />
+      </Card>
     );
   }
 }
