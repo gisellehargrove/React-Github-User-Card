@@ -7,6 +7,7 @@ import CardActions from '@material-ui/core/CardActions';
 import Avatar from '@material-ui/core/Avatar';
 
 
+
 class UserCard extends React.Component {
 
   constructor() {
@@ -22,7 +23,7 @@ class UserCard extends React.Component {
         })
           .then(response => {
             this.setState({userData: response})
-            console.log(this.state);
+            console.log(this.state.userData);
           });
       }
     };
